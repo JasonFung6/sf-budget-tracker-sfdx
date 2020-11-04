@@ -221,10 +221,6 @@
   </types>
   <types>
     <members>*</members>
-    <name>EntityImplements</name>
-  </types>
-  <types>
-    <members>*</members>
     <name>EscalationRules</name>
   </types>
   <types>
@@ -313,19 +309,11 @@
   </types>
   <types>
     <members>*</members>
-    <name>ManagedContentType</name>
-  </types>
-  <types>
-    <members>*</members>
     <name>MatchingRules</name>
   </types>
   <types>
     <members>*</members>
     <name>MobileApplicationDetail</name>
-  </types>
-  <types>
-    <members>*</members>
-    <name>MutingPermissionSet</name>
   </types>
   <types>
     <members>*</members>
