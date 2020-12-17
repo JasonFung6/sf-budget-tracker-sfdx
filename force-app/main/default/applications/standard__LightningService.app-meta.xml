@@ -13,9 +13,17 @@
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
     <tabs>standard-home</tabs>
+    <tabs>Bank__c</tabs>
+    <tabs>Expenditure__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>LightningService_UtilityBar</utilityBar>
     <workspaceConfig>
+        <mappings>
+            <tab>Bank__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Expenditure__c</tab>
+        </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>

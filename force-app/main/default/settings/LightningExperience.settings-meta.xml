@@ -2,7 +2,7 @@
 <LightningExperienceSettings xmlns="http://soap.sforce.com/2006/04/metadata">
     <enableAccessCheckCrucPref>false</enableAccessCheckCrucPref>
     <enableApiUserLtngOutAccessPref>false</enableApiUserLtngOutAccessPref>
-    <enableAuraCDNPref>true</enableAuraCDNPref>
+    <enableAuraCDNPref>false</enableAuraCDNPref>
     <enableAuraDepAccessChksCRUCPref>false</enableAuraDepAccessChksCRUCPref>
     <enableAuraSecStaticResCRUCPref>false</enableAuraSecStaticResCRUCPref>
     <enableFeedbackInMobile>true</enableFeedbackInMobile>

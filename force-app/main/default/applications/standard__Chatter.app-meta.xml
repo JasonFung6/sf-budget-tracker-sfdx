@@ -9,4 +9,6 @@
     <tabs>standard-OtherUserProfile</tabs>
     <tabs>standard-CollaborationGroup</tabs>
     <tabs>standard-File</tabs>
+    <tabs>Bank__c</tabs>
+    <tabs>Expenditure__c</tabs>
 </CustomApplication>

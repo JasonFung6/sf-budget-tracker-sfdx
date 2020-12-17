@@ -4,4 +4,6 @@
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <tabs>standard-Chatter</tabs>
+    <tabs>Bank__c</tabs>
+    <tabs>Expenditure__c</tabs>
 </CustomApplication>

@@ -21,6 +21,8 @@
     <tabs>standard-File</tabs>
     <tabs>standard-Image</tabs>
     <tabs>standard-DeleteEvent</tabs>
+    <tabs>Bank__c</tabs>
+    <tabs>Expenditure__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Budget_Tracker_UtilityBar</utilityBar>
 </CustomApplication>

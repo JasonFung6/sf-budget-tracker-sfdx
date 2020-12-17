@@ -179,7 +179,15 @@
     <tabs>standard-Case</tabs>
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-Lead</tabs>
+    <tabs>Bank__c</tabs>
+    <tabs>Expenditure__c</tabs>
     <workspaceConfig>
+        <mappings>
+            <tab>Bank__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Expenditure__c</tab>
+        </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>
