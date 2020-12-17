@@ -11,4 +11,6 @@
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
+    <tabs>Bank__c</tabs>
+    <tabs>Expenditure__c</tabs>
 </CustomApplication>

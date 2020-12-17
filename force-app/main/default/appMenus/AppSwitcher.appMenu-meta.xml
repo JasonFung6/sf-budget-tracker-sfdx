@@ -84,4 +84,8 @@
         <name>Budget_Tracker</name>
         <type>CustomApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>DEVHUB_grasqnycyloqeeepgkkc</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
 </AppMenu>

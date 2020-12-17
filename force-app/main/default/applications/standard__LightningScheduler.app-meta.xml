@@ -12,5 +12,7 @@
     <tabs>standard-WorkType</tabs>
     <tabs>standard-OperatingHours</tabs>
     <tabs>standard-ServiceAppointment</tabs>
+    <tabs>Bank__c</tabs>
+    <tabs>Expenditure__c</tabs>
     <uiType>Lightning</uiType>
 </CustomApplication>

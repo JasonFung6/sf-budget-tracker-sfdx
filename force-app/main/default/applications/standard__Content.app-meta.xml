@@ -8,4 +8,6 @@
     <tabs>standard-Workspace</tabs>
     <tabs>standard-ContentSearch</tabs>
     <tabs>standard-ContentSubscriptions</tabs>
+    <tabs>Bank__c</tabs>
+    <tabs>Expenditure__c</tabs>
 </CustomApplication>
