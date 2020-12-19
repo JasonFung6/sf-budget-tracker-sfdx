@@ -2,7 +2,7 @@
 global class ExpenditureService {
     /*
      * @description : Returns response body containing expenditure data otherwise an error code and message
-     * @example     : https://expenditure-developer-edition.um6.force.com/expenditure/services/apexrest/expenditure?accId={accId}&expId={expId}
+     * @example     : http://api.jasonfung.co.uk/expenditure/services/apexrest/expenditure?accId={accId}&expId={expId}
      * TODO         : Abstract out, tidy data wrapper assignment and convert DateTime to Unix format
      */
     @HttpGet
