@@ -17,7 +17,7 @@ public without sharing class ExpendituresService {
     /*
      * @method  : getExpenditures
      * @desc    : Return a list of expenditure items with the following optional
-     *            filters applied, `category`, `period`, `orderBy`, `limit`
+     *            filters, `category`, `period`, `orderBy`, `limit`
      * @link    : https://app.swaggerhub.com/apis/JasonFung6/Expenditure/1.0.0-oas3#/default/getListByFilters
      */
     public static void getExpenditures(RestRequest req, RestResponse res) {

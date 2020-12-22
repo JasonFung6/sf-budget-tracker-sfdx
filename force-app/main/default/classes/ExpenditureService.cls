@@ -1,7 +1,7 @@
 public without sharing class ExpenditureService {
     /*
      * @method  : getExpenditure
-     * @desc    : Return a single expenditure item with
+     * @desc    : Return a single expenditure item
      * @link    : https://app.swaggerhub.com/apis/JasonFung6/Expenditure/1.0.0-oas3#/default/getById
      */
     public static void getExpenditure(RestRequest req, RestResponse res) {
