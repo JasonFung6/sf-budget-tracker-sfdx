@@ -1,14 +1,10 @@
-@RestResource(urlMapping='/expenditure/*')
-global class ExpenditureService {
+public without sharing class ExpenditureService {
     /*
-     * @description : Returns response body containing expenditure data otherwise an error code and message
-     * @example     : http://api.jasonfung.co.uk/expenditure/services/apexrest/expenditure?accId={accId}&expId={expId}
-     * @link        : https://app.swaggerhub.com/apis/JasonFung6/Expenditure/1.0.0-oas3#/default/getById
+     * @method  : getExpenditure
+     * @desc    : Return a single expenditure item with
+     * @link    : https://app.swaggerhub.com/apis/JasonFung6/Expenditure/1.0.0-oas3#/default/getById
      */
-    @HttpGet
-    global static void get() {
-        RestRequest req = RestContext.request;
-        RestResponse res = RestContext.response;
+    public static void getExpenditure(RestRequest req, RestResponse res) {
         ErrorResponse errors;
         ExpenditureServiceModel data = new ExpenditureServiceModel();
 
