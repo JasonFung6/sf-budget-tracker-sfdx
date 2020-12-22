@@ -5,6 +5,7 @@ global class ApiService {
      *                a list, otherwise an error code and message
      * @example     : http://api.jasonfung.co.uk/budgettracker
      * @link        : https://app.swaggerhub.com/apis/JasonFung6/Expenditure
+     * TODO         : Better `apiType` validation, and default should return 404
      */
     @HttpGet
     global static void get() {
