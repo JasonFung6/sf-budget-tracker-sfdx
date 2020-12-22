@@ -3,7 +3,7 @@ global class ExpenditureService {
     /*
      * @description : Returns response body containing expenditure data otherwise an error code and message
      * @example     : http://api.jasonfung.co.uk/expenditure/services/apexrest/expenditure?accId={accId}&expId={expId}
-     * TODO         : Abstract out, tidy data wrapper assignment and convert DateTime to Unix format
+     * @link        : https://app.swaggerhub.com/apis/JasonFung6/Expenditure/1.0.0-oas3#/default/getById
      */
     @HttpGet
     global static void get() {
@@ -30,27 +30,26 @@ global class ExpenditureService {
         res.addHeader('Content-Type', 'application/json; charset=utf-8');
 
         try {
-            Account acc = [SELECT Id FROM Account WHERE Id = :accountId];
-            Expenditure__c exp = [
-                SELECT Id, Bank__r.Name, Amount__c, CreatedDate, Category__c
-                FROM Expenditure__c
-                WHERE Account__c = :accountId AND Id = :expenditureId
-            ];
+            Account acc = QueryUtils.getAccountById(accountId);
+            Expenditure__c exp = QueryUtils.getExpenditureByAccIdAndExpId(
+                accountId,
+                expenditureId
+            );
 
+            // Assign queried data to wrapper class
             data.id = exp.Id;
             data.bank = exp.Bank__r.Name;
             data.amount = exp.Amount__c;
-            data.createdDate = exp.CreatedDate;
+            data.createdDate = exp.CreatedDate.getTime(); // Convert DateTime to Unix timestamp
             data.receiptURL = '';
             data.category = exp.Category__c;
+            data.description = exp.Description__c;
 
             res.statusCode = 200;
             res.responseBody = Blob.valueOf(JSON.serializePretty(data));
-        } catch (QueryException e) {
+        } catch (Exception e) {
             res.statusCode = 404;
-            errors = new ErrorResponse(
-                'Account or Expenditure record not found'
-            );
+            errors = new ErrorResponse('Expenditure item not found');
             res.responseBody = Blob.valueOf(JSON.serializePretty(errors));
 
             return;
