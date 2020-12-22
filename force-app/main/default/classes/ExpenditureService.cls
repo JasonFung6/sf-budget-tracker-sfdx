@@ -17,12 +17,12 @@ global class ExpenditureService {
 
         try {
             // Get the account and expenditure Id from URL
-            accountId = RestContext.request.params.get('accId');
-            expenditureId = RestContext.request.params.get('expId');
+            accountId = req.params.get('accId');
+            expenditureId = req.params.get('expId');
         } catch (Exception e) {
             res.statusCode = 400;
             errors = new ErrorResponse('Bad Request');
-            res.responseBody = Blob.valueOf(JSON.serialize(errors));
+            res.responseBody = Blob.valueOf(JSON.serializePretty(errors));
 
             return;
         }
@@ -51,7 +51,7 @@ global class ExpenditureService {
             errors = new ErrorResponse(
                 'Account or Expenditure record not found'
             );
-            res.responseBody = Blob.valueOf(JSON.serialize(errors));
+            res.responseBody = Blob.valueOf(JSON.serializePretty(errors));
 
             return;
         }
