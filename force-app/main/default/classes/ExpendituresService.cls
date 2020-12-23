@@ -93,16 +93,14 @@ public without sharing class ExpendituresService {
     ) {
         if (
             req.params.containsKey('category') &&
-            req.params.get('category') != null &&
-            req.params.get('category') != ''
+            !String.isBlank(req.params.get('category'))
         ) {
             category = req.params.get('category');
         }
 
         if (
             req.params.containsKey('period') &&
-            req.params.get('period') != null &&
-            req.params.get('period') != ''
+            !String.isBlank(req.params.get('period'))
         ) {
             String periodParam = req.params.get('period');
 
@@ -119,8 +117,7 @@ public without sharing class ExpendituresService {
 
         if (
             req.params.containsKey('orderBy') &&
-            req.params.get('orderBy') != null &&
-            req.params.get('orderBy') != ''
+            !String.isBlank(req.params.get('orderBy'))
         ) {
             String orderByParam = req.params.get('orderBy');
 
@@ -137,8 +134,7 @@ public without sharing class ExpendituresService {
 
         if (
             req.params.containsKey('limit') &&
-            req.params.get('limit') != null &&
-            req.params.get('limit') != ''
+            !String.isBlank(req.params.get('limit'))
         ) {
             limiter = Integer.valueof(req.params.get('limit'));
         }

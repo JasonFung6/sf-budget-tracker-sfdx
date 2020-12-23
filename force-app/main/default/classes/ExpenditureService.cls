@@ -34,7 +34,7 @@ public without sharing class ExpenditureService {
 
             // Assign queried data to wrapper class
             data.id = exp.Id;
-            data.bank = exp.Bank__r.Name;
+            data.bank = exp.Bank__r.Branch_Name__c;
             data.amount = exp.Amount__c;
             data.createdDate = exp.CreatedDate.getTime(); // Convert DateTime to Unix timestamp
             data.receiptURL = '';

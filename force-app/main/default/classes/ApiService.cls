@@ -1,26 +1,38 @@
 @RestResource(urlMapping='/budgettracker/*')
 global class ApiService {
+    public final static Set<String> ApiOption = new Set<String>{
+        'single',
+        'multi'
+    };
+
     /*
      * @description : Returns response body containing a single expenditure record or
      *                a list, otherwise an error code and message
      * @example     : http://api.jasonfung.co.uk/budgettracker
      * @link        : https://app.swaggerhub.com/apis/JasonFung6/Expenditure
-     * TODO         : Better `apiType` validation, and default should return 404
      */
     @HttpGet
     global static void get() {
         RestRequest req = RestContext.request;
         RestResponse res = RestContext.response;
         ErrorResponse errors;
-        ExpenditureServiceModel data = new ExpenditureServiceModel();
+        String apiType = req.params.get('apiType');
 
-        switch on req.params.get('apiType'){
-            when 'single' {
-                ExpenditureService.getExpenditure(req, res);
+        if (apiOption.contains(apiType) && !String.isBlank(apiType)) {
+            switch on apiType {
+                when 'single' {
+                    ExpenditureService.getExpenditure(req, res);
+                }
+                when 'multi' {
+                    ExpendituresService.getExpenditures(req, res);
+                }
             }
-            when 'multi' {
-                ExpendituresService.getExpenditures(req, res);
-            }
+        } else {
+            res.statusCode = 400;
+            errors = new ErrorResponse('Bad Request');
+            res.responseBody = Blob.valueOf(JSON.serializePretty(errors));
+
+            return;
         }
     }
 

@@ -16,7 +16,7 @@ public without sharing class QueryUtils {
             SELECT
                 Id,
                 Amount__c,
-                Bank__r.Name,
+                Bank__r.Branch_Name__c,
                 Category__c,
                 CreatedDate,
                 Description__c
