@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Branch Name --></label>
+    <name>Branch_Name__c</name>
+    <picklistValues>
+        <masterLabel>Barclays</masterLabel>
+        <translation><!-- Barclays --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Monzo</masterLabel>
+        <translation><!-- Monzo --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nationwide</masterLabel>
+        <translation><!-- Nationwide --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Natwest</masterLabel>
+        <translation><!-- Natwest --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Starling</masterLabel>
+        <translation><!-- Starling --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

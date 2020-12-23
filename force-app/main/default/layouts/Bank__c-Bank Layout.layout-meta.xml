@@ -8,8 +8,12 @@
         <label>Bank Information</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Readonly</behavior>
                 <field>Name</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Branch_Name__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>

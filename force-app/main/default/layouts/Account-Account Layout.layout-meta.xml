@@ -136,10 +136,18 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Amount__c</fields>
+        <fields>Bank__c</fields>
+        <fields>Category__c</fields>
+        <fields>Description__c</fields>
+        <fields>CREATED_DATE</fields>
         <relatedList>Expenditure__c.Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Branch_Name__c</fields>
+        <fields>Balance__c</fields>
+        <fields>LAST_UPDATE</fields>
         <relatedList>Bank__c.Account__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
