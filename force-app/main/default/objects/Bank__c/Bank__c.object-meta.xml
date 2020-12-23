@@ -162,9 +162,10 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Bank</label>
     <nameField>
+        <displayFormat>B-{000000}</displayFormat>
         <label>Bank Name</label>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Banks</pluralLabel>
     <searchLayouts/>
