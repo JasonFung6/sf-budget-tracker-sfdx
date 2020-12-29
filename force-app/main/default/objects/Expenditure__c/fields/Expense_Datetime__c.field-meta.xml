@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Expense_Datetime__c</fullName>
-    <description>The date time this item was spent</description>
+    <fullName>Expense_DateTime__c</fullName>
+    <description>The spending date and time</description>
     <externalId>false</externalId>
-    <inlineHelpText>The date time this item was spent</inlineHelpText>
-    <label>Expense Datetime</label>
+    <inlineHelpText>The spending date and time</inlineHelpText>
+    <label>Expense DateTime</label>
     <required>true</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

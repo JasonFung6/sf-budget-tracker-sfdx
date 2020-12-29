@@ -35,7 +35,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Expense_Datetime__c</field>
+                <field>Expense_DateTime__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>

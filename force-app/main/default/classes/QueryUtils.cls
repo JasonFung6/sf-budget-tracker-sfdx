@@ -18,7 +18,7 @@ public without sharing class QueryUtils {
                 Amount__c,
                 Bank__r.Branch_Name__c,
                 Category__c,
-                Expense_Datetime__c,
+                Expense_DateTime__c,
                 Description__c
             FROM Expenditure__c
             WHERE Account__c = :accId AND Id = :expId
@@ -26,7 +26,7 @@ public without sharing class QueryUtils {
     }
 
     public static List<Expenditure__c> getExpendituresWithFilters(Id accId, String category, String period, String orderBy, Integer limiter) {
-        String query = 'SELECT Id, Amount__c, Category__c, Expense_Datetime__c FROM Expenditure__c WHERE Account__c = :accId ';
+        String query = 'SELECT Id, Amount__c, Category__c, Expense_DateTime__c FROM Expenditure__c WHERE Account__c = :accId ';
 
         if (category != null) {
             query += 'AND Category__c = :category ';
@@ -34,23 +34,23 @@ public without sharing class QueryUtils {
 
         if (period != null) {
             if (period == 'daily') {
-                query += 'AND Expense_Datetime__c = TODAY ';
+                query += 'AND Expense_DateTime__c = TODAY ';
             }
 
             if (period == 'monthly') {
-                query += 'AND Expense_Datetime__c = THIS_MONTH ';
+                query += 'AND Expense_DateTime__c = THIS_MONTH ';
             }
 
             if (period == 'yearly') {
-                query += 'AND Expense_Datetime__c = THIS_YEAR ';
+                query += 'AND Expense_DateTime__c = THIS_YEAR ';
             }
         }
 
         if (orderBy != null) {
             if (orderBy == 'ascending') {
-                query += 'ORDER BY Expense_Datetime__c ASC ';
+                query += 'ORDER BY Expense_DateTime__c ASC ';
             } else if (orderBy == 'descending') {
-                query += 'ORDER BY Expense_Datetime__c DESC ';
+                query += 'ORDER BY Expense_DateTime__c DESC ';
             }
         }
 
