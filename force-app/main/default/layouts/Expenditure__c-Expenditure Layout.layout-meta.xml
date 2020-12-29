@@ -33,6 +33,10 @@
                 <behavior>Required</behavior>
                 <field>Bank__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Expense_Datetime__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
