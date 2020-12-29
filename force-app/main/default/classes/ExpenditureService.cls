@@ -36,7 +36,7 @@ public without sharing class ExpenditureService {
             data.id = exp.Id;
             data.bank = exp.Bank__r.Branch_Name__c;
             data.amount = exp.Amount__c;
-            data.createdDate = exp.CreatedDate.getTime(); // Convert DateTime to Unix timestamp
+            data.expenseDatetime = exp.Expense_Datetime__c.getTime(); // Convert DateTime to Unix timestamp
             data.receiptURL = '';
             data.category = exp.Category__c;
             data.description = exp.Description__c;

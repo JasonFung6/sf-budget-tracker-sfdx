@@ -53,7 +53,7 @@ public without sharing class ExpendituresService {
 
                         esm.id = exp.Id;
                         esm.amount = exp.Amount__c;
-                        esm.createdDate = exp.CreatedDate.getTime();
+                        esm.expenseDatetime = exp.Expense_Datetime__c.getTime();
                         esm.category = exp.Category__c;
 
                         data.add(esm);

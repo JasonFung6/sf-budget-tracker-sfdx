@@ -2,7 +2,7 @@ public class ExpenditureServiceModel {
     public String id;
     public String bank;
     public Decimal amount;
-    public Long createdDate;
+    public Long expenseDatetime;
     public String receiptURL;
     public String category;
     public String description;
@@ -11,7 +11,7 @@ public class ExpenditureServiceModel {
         this.id = id;
         this.bank = bank;
         this.amount = amount;
-        this.createdDate = createdDate;
+        this.expenseDatetime = expenseDatetime;
         this.receiptURL = receiptURL;
         this.category = category;
         this.description = description;
