@@ -8,6 +8,18 @@ public without sharing class QueryUtils {
         return [SELECT Id FROM Account WHERE Id = :accId];
     }
 
+    public static Account getAccountDetails(Id accId) {
+        return [
+            SELECT
+                Id,
+                Income__c,
+                Income_Periodicity__c,
+                (SELECT Branch_Name__c, Balance__c FROM Banks__r)
+            FROM Account
+            WHERE Id = :accId
+        ];
+    }
+
     public static Expenditure__c getExpenditureByAccIdAndExpId(
         Id accId,
         Id expId
@@ -25,7 +37,13 @@ public without sharing class QueryUtils {
         ];
     }
 
-    public static List<Expenditure__c> getExpendituresWithFilters(Id accId, String category, String period, String orderBy, Integer limiter) {
+    public static List<Expenditure__c> getExpendituresWithFilters(
+        Id accId,
+        String category,
+        String period,
+        String orderBy,
+        Integer limiter
+    ) {
         String query = 'SELECT Id, Amount__c, Category__c, Expense_DateTime__c FROM Expenditure__c WHERE Account__c = :accId ';
 
         if (category != null) {

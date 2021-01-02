@@ -2,12 +2,15 @@
 global class ApiService {
     public final static Set<String> ApiOption = new Set<String>{
         'single',
-        'multi'
+        'multi',
+        'acc'
     };
 
     /*
-     * @description : Returns response body containing a single expenditure record or
-     *                a list, otherwise an error code and message
+     * @description : Returns response body containing either:
+     *                a.) Single expenditure record
+     *                b.) List of expenditure records
+     *                c.) Account and related Bank information
      * @example     : http://api.jasonfung.co.uk/budgettracker
      * @link        : https://app.swaggerhub.com/apis/JasonFung6/Expenditure
      */
@@ -25,6 +28,9 @@ global class ApiService {
                 }
                 when 'multi' {
                     ExpendituresService.getExpenditures(req, res);
+                }
+                when 'acc' {
+                    AccountService.getAccountDetails(req, res);
                 }
             }
         } else {
