@@ -1,14 +1,10 @@
-@RestResource(urlMapping='/expenditure/*')
-global class ExpenditureService {
+public without sharing class ExpenditureService {
     /*
-     * @description : Returns response body containing expenditure data otherwise an error code and message
-     * @example     : http://api.jasonfung.co.uk/expenditure/services/apexrest/expenditure?accId={accId}&expId={expId}
-     * @link        : https://app.swaggerhub.com/apis/JasonFung6/Expenditure/1.0.0-oas3#/default/getById
+     * @method  : getExpenditure
+     * @desc    : Return a single expenditure item
+     * @link    : https://app.swaggerhub.com/apis/JasonFung6/Expenditure/1.0.0-oas3#/default/getById
      */
-    @HttpGet
-    global static void get() {
-        RestRequest req = RestContext.request;
-        RestResponse res = RestContext.response;
+    public static void getExpenditure(RestRequest req, RestResponse res) {
         ErrorResponse errors;
         ExpenditureServiceModel data = new ExpenditureServiceModel();
 
@@ -38,9 +34,9 @@ global class ExpenditureService {
 
             // Assign queried data to wrapper class
             data.id = exp.Id;
-            data.bank = exp.Bank__r.Name;
+            data.bank = exp.Bank__r.Branch_Name__c;
             data.amount = exp.Amount__c;
-            data.createdDate = exp.CreatedDate.getTime(); // Convert DateTime to Unix timestamp
+            data.expenseDateTime = exp.Expense_DateTime__c.getTime(); // Convert DateTime to Unix timestamp
             data.receiptURL = '';
             data.category = exp.Category__c;
             data.description = exp.Description__c;
