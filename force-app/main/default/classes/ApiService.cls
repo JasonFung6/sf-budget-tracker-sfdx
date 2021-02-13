@@ -21,6 +21,8 @@ global class ApiService {
         ErrorResponse errors;
         String apiType = req.params.get('apiType');
 
+        ServiceUtils.handleCors(req, res);
+
         if (apiOption.contains(apiType) && !String.isBlank(apiType)) {
             switch on apiType {
                 when 'single' {
