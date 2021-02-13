@@ -5,7 +5,6 @@ public class ExpendituresServiceModel {
     public String description;
     public Long expenseDateTime;
 
-
     public ExpendituresServiceModel() {
         this.id = id;
         this.amount = amount;
