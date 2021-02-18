@@ -44,7 +44,7 @@ public without sharing class QueryUtils {
         String orderBy,
         Integer limiter
     ) {
-        String query = 'SELECT Id, Amount__c, Category__c, Expense_DateTime__c FROM Expenditure__c WHERE Account__c = :accId ';
+        String query = 'SELECT Id, Amount__c, Category__c, Description__c, Expense_DateTime__c FROM Expenditure__c WHERE Account__c = :accId ';
 
         if (category != null) {
             query += 'AND Category__c = :category ';
