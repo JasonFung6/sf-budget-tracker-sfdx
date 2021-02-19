@@ -18,14 +18,4 @@ public with sharing class ServiceUtils {
             }
         }
     }
-
-    private static String reallyLongMethodAndSignature(
-        String one,
-        String two,
-        String three,
-        String four,
-        String five
-    ) {
-        return one + two + three + four + five;
-    }
 }
