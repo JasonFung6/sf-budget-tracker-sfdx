@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Category__c</fullName>
     <description>The category this expense record falls under</description>
     <externalId>false</externalId>
-    <inlineHelpText>The category this expense record falls under</inlineHelpText>
+    <inlineHelpText
+    >The category this expense record falls under</inlineHelpText>
     <label>Category</label>
     <required>true</required>
     <trackHistory>false</trackHistory>
@@ -14,19 +15,14 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Education and Training</fullName>
+                <fullName>Bills</fullName>
                 <default>false</default>
-                <label>Education and Training</label>
+                <label>Bills</label>
             </value>
             <value>
-                <fullName>Employee Benefits</fullName>
+                <fullName>Charity</fullName>
                 <default>false</default>
-                <label>Employee Benefits</label>
-            </value>
-            <value>
-                <fullName>Meals</fullName>
-                <default>false</default>
-                <label>Meals</label>
+                <label>Charity</label>
             </value>
             <value>
                 <fullName>Entertainment</fullName>
@@ -34,49 +30,44 @@
                 <label>Entertainment</label>
             </value>
             <value>
-                <fullName>Office Expenses</fullName>
+                <fullName>Food and Drink</fullName>
                 <default>false</default>
-                <label>Office Expenses</label>
+                <label>Food and Drink</label>
             </value>
             <value>
-                <fullName>Other Expenses</fullName>
+                <fullName>Groceries</fullName>
                 <default>false</default>
-                <label>Other Expenses</label>
+                <label>Groceries</label>
             </value>
             <value>
-                <fullName>Personal</fullName>
+                <fullName>Holidays</fullName>
                 <default>false</default>
-                <label>Personal</label>
+                <label>Holidays</label>
             </value>
             <value>
-                <fullName>Professional Services</fullName>
+                <fullName>Miscellaneous</fullName>
                 <default>false</default>
-                <label>Professional Services</label>
+                <label>Miscellaneous</label>
             </value>
             <value>
-                <fullName>Rent</fullName>
+                <fullName>Person</fullName>
                 <default>false</default>
-                <label>Rent</label>
+                <label>Person</label>
             </value>
             <value>
-                <fullName>Supplies</fullName>
+                <fullName>Personal Care</fullName>
                 <default>false</default>
-                <label>Supplies</label>
+                <label>Personal Care</label>
             </value>
             <value>
-                <fullName>Travel</fullName>
+                <fullName>Shopping</fullName>
                 <default>false</default>
-                <label>Travel</label>
+                <label>Shopping</label>
             </value>
             <value>
-                <fullName>Utilities</fullName>
+                <fullName>Transport</fullName>
                 <default>false</default>
-                <label>Utilities</label>
-            </value>
-            <value>
-                <fullName>Vehicle</fullName>
-                <default>false</default>
-                <label>Vehicle</label>
+                <label>Transport</label>
             </value>
         </valueSetDefinition>
     </valueSet>

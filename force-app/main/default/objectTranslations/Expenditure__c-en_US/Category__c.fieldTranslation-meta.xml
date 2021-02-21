@@ -1,58 +1,50 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <help><!-- The category this expense record falls under --></help>
     <label><!-- Category --></label>
     <name>Category__c</name>
     <picklistValues>
-        <masterLabel>Education and Training</masterLabel>
-        <translation><!-- Education and Training --></translation>
+        <masterLabel>Bills</masterLabel>
+        <translation><!-- Bills --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Employee Benefits</masterLabel>
-        <translation><!-- Employee Benefits --></translation>
+        <masterLabel>Charity</masterLabel>
+        <translation><!-- Charity --></translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>Entertainment</masterLabel>
         <translation><!-- Entertainment --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Meals</masterLabel>
-        <translation><!-- Meals --></translation>
+        <masterLabel>Food and Drink</masterLabel>
+        <translation><!-- Food and Drink --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Office Expenses</masterLabel>
-        <translation><!-- Office Expenses --></translation>
+        <masterLabel>Groceries</masterLabel>
+        <translation><!-- Groceries --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Other Expenses</masterLabel>
-        <translation><!-- Other Expenses --></translation>
+        <masterLabel>Holidays</masterLabel>
+        <translation><!-- Holidays --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Personal</masterLabel>
-        <translation><!-- Personal --></translation>
+        <masterLabel>Miscellaneous</masterLabel>
+        <translation><!-- Miscellaneous --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Professional Services</masterLabel>
-        <translation><!-- Professional Services --></translation>
+        <masterLabel>Person</masterLabel>
+        <translation><!-- Person --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Rent</masterLabel>
-        <translation><!-- Rent --></translation>
+        <masterLabel>Personal Care</masterLabel>
+        <translation><!-- Personal Care --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Supplies</masterLabel>
-        <translation><!-- Supplies --></translation>
+        <masterLabel>Shopping</masterLabel>
+        <translation><!-- Shopping --></translation>
     </picklistValues>
     <picklistValues>
-        <masterLabel>Travel</masterLabel>
-        <translation><!-- Travel --></translation>
-    </picklistValues>
-    <picklistValues>
-        <masterLabel>Utilities</masterLabel>
-        <translation><!-- Utilities --></translation>
-    </picklistValues>
-    <picklistValues>
-        <masterLabel>Vehicle</masterLabel>
-        <translation><!-- Vehicle --></translation>
+        <masterLabel>Transport</masterLabel>
+        <translation><!-- Transport --></translation>
     </picklistValues>
 </CustomFieldTranslation>
