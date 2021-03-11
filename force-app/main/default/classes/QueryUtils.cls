@@ -1,7 +1,8 @@
 /**
  * @class   QueryUtils
- * @desc    Utilities class to hold SOQL related methods, test comment
+ * @desc    Utilities class to hold SOQL related methods
  * @date    22/12/2020
+ * @test    This is a test comment not yet deployed to the org
  */
 public without sharing class QueryUtils {
     public static Account getAccountById(Id accId) {

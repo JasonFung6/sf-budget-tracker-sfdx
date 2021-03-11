@@ -29,5 +29,3 @@ jobs:
                 checkonly: false
                 deploy_wait_time: '10'
                 manifest_path: manifest/package-01.xml
-                destructive_path: destructive
-                data_factory: scripts/apex/CreateBaseData.apex
