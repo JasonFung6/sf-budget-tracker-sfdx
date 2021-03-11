@@ -20,7 +20,7 @@ jobs:
             - name: 'Build and Deploy'
               uses: tiagonnascimento/sfdx-orgdev-build-deploy@v2
               with:
-                type: 'sandbox'
+                type: 'production'
                 certificate_path: devops/server.key.enc
                 decryption_key: ${{ secrets.DECRYPTION_KEY_NON_PRODUCTIVE }}
                 decryption_iv: ${{ secrets.DECRYPTION_IV_NON_PRODUCTIVE }}
