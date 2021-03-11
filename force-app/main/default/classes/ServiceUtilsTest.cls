@@ -1,5 +1,5 @@
 /**
- * @test   This is a test comment not yet deployed to the org 1
+ * @test   This is a test comment not yet deployed to the org 2
  */
 @isTest
 public class ServiceUtilsTest {
