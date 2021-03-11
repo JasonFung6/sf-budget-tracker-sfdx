@@ -29,3 +29,4 @@ jobs:
                 checkonly: false
                 deploy_wait_time: '10'
                 manifest_path: manifest/package-01.xml
+                deploy_testlevel: RunSpecifiedTests
