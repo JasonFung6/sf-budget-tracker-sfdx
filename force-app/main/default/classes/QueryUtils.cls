@@ -1,6 +1,6 @@
 /**
  * @class   QueryUtils
- * @desc    Utilities class to hold SOQL related methods
+ * @desc    Utilities class to hold SOQL related methods, test comment
  * @date    22/12/2020
  */
 public without sharing class QueryUtils {
