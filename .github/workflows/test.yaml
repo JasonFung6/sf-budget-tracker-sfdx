@@ -1,5 +1,5 @@
 # Unique name for this workflow
-name: On push develop - Deploy to TI01
+name: On push master - Deploy to TI01
 
 # Definition when the workflow should run
 on:
