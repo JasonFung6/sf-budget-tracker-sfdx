@@ -1,13 +1,10 @@
-# Unique name for this workflow
-name: On push master - Deploy to TI01
+name: On push master - Deploy to SF Org
 
-# Definition when the workflow should run
 on:
     push:
         branches:
             - master
 
-# Jobs to be executed
 jobs:
     build-deploy:
         runs-on: ubuntu-latest
@@ -17,17 +14,18 @@ jobs:
             - name: 'Checkout source code'
               uses: actions/checkout@v2
 
+            # 
             - name: 'Build and Deploy'
               uses: tiagonnascimento/sfdx-orgdev-build-deploy@v2
               with:
                 type: 'production'
                 certificate_path: devops/server.key.enc
-                decryption_key: ${{ secrets.DECRYPTION_KEY_NON_PRODUCTIVE }}
-                decryption_iv: ${{ secrets.DECRYPTION_IV_NON_PRODUCTIVE }}
-                client_id: ${{ secrets.CONSUMER_KEY_TI01 }}
-                username: ${{ secrets.USERNAME_TI01 }}
+                decryption_key: ${{ secrets.DECRYPTION_KEY }}
+                decryption_iv: ${{ secrets.DECRYPTION_IV }}
+                client_id: ${{ secrets.CONSUMER_KEY }}
+                username: ${{ secrets.USERNAME }}
                 checkonly: false
                 deploy_wait_time: '10'
-                manifest_path: manifest/package-01.xml
+                manifest_path: manifest/package-deploy.xml
                 deploy_testlevel: RunSpecifiedTests
                 default_source_path: force-app/main/default
