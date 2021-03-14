@@ -26,4 +26,5 @@ jobs:
                 username: ${{ secrets.USERNAME }}
                 checkonly: true
                 manifest_path: manifest/package-deploy.xml
+                deploy_testlevel: RunSpecifiedTests
                 default_source_path: force-app/main/default
