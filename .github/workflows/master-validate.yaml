@@ -1,7 +1,7 @@
-name: On push master - Deploy to SF Org
+name: On pull request against master - Validate
 
 on:
-    push:
+    pull_request:
         branches:
             - master
 
@@ -14,8 +14,8 @@ jobs:
             - name: 'Checkout source code'
               uses: actions/checkout@v2
 
-            # Build and deploy SFDX project
-            - name: 'Build and Deploy'
+            # Build and validate before deploying
+            - name: 'Build and Validate'
               uses: tiagonnascimento/sfdx-orgdev-build-deploy@v2
               with:
                 type: 'production'
@@ -24,8 +24,6 @@ jobs:
                 decryption_iv: ${{ secrets.DECRYPTION_IV }}
                 client_id: ${{ secrets.CONSUMER_KEY }}
                 username: ${{ secrets.USERNAME }}
-                checkonly: false
-                deploy_wait_time: '10'
+                checkonly: true
                 manifest_path: manifest/package-deploy.xml
-                deploy_testlevel: RunSpecifiedTests
                 default_source_path: force-app/main/default
