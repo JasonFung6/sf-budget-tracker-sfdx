@@ -4,7 +4,8 @@ on:
     push:
         branches:
             - master
-
+        paths:
+            - 'force-app/main/default/**'
 jobs:
     build-deploy:
         runs-on: ubuntu-latest
