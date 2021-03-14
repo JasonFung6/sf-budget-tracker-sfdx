@@ -1,4 +1,4 @@
-name: On pull request against master - Validate
+name: On pull request against master - validate
 
 on:
     pull_request:
