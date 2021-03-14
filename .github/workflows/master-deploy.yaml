@@ -1,4 +1,4 @@
-name: On push master - Deploy to SF Org
+name: On merge to master - deploy
 
 on:
     push:
@@ -10,11 +10,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
 
-            # Checkout the code in the pull request
+            # Checkout latest from pull request
             - name: 'Checkout source code'
               uses: actions/checkout@v2
 
-            # Build and deploy SFDX project
+            # Build and deploy
             - name: 'Build and Deploy'
               uses: tiagonnascimento/sfdx-orgdev-build-deploy@v2
               with:
