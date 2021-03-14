@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata"/>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>API_Endpoint</fullName>
+        <categories>URI</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>API Endpoint</shortDescription>
+        <value>https://expenditure-developer-edition.um6.force.com/expenditure/services/apexrest</value>
+    </labels>
+</CustomLabels>
