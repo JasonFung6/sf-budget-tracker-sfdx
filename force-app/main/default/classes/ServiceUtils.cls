@@ -1,5 +1,6 @@
 /**
  * Helpers used across multiple outward-facing API service classes.
+ * SOME COMMENT
  */
 public with sharing class ServiceUtils {
     public static void handleCors(RestRequest req, RestResponse res) {
