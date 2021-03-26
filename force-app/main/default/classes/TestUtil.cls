@@ -1,10 +1,15 @@
 /*
- * @who            : Jason Fung
+ * @author         : Jason Fung
  * @description    : To support data creation in test classes
  */
 @isTest
 public class TestUtil {
-    // Account
+    /**
+     * @method  createAccount
+     * @desc    create a single account record
+     * @param   String name
+     * @param   Map<String, Object> fields
+     */
     public static Account createAccount(
         String name,
         Map<String, Object> fields
@@ -23,7 +28,13 @@ public class TestUtil {
         return acc;
     }
 
-    // Contact
+    /**
+     * @method  createdContact
+     * @desc    create a single contact record
+     * @param   String lastname
+     * @param   String email
+     * @param   Map<String, Object> fields
+     */
     public static Contact createContact(
         String lastName,
         String email,
