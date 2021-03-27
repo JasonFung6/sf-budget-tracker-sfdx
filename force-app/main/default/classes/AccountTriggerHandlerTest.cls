@@ -6,74 +6,79 @@
 public class AccountTriggerHandlerTest {
     @testSetup
     static void testSetup() {
-        createTwentyAccountsWithTwoContacts();
-        createAccountWithNoContacts();
+        createTwentyActiveAccountsWithTwoContacts();
+        createTwentyInactiveAccountsWithTwoContacts();
+        createActiveAccountWithNoContacts();
+    }
+
+    @IsTest
+    static void updateAccountToInactive() {
+        Account acc = getAccount('Unit-Test-Active-Account-1');
+
+        acc.Status__c = 'Inactive';
+        update acc;
+
+        List<Contact> cons = getContacts(new Set<Id>{ acc.Id });
+
+        for (Contact c : cons) {
+            System.assertEquals('Inactive', c.Status__c);
+        }
     }
 
     @IsTest
     static void updateAccountToActive() {
-        Account acc = getAccount('Unit-Test-Account-1');
-        System.assert(String.isBlank(acc.Status__c));
+        Account acc = getAccount('Unit-Test-Inactive-Account-1');
 
         acc.Status__c = 'Active';
         update acc;
 
-        for (Contact c : getContactsWithAccId(acc.Id)) {
+        List<Contact> cons = getContacts(new Set<Id>{ acc.Id });
+
+        for (Contact c : cons) {
             System.assertEquals('Active', c.Status__c);
         }
     }
 
     @IsTest
-    static void updateAccountToInactive() {
-        Account acc = getAccount('Unit-Test-Account-1');
-        System.assert(String.isBlank(acc.Status__c));
+    static void updateAccountStatusEnMasse() {
+        Set<Id> accIds = new Set<Id>();
+        List<Account> accs = getAccounts('Active');
 
-        acc.Status__c = 'Inactive';
-        update acc;
+        for (Account a : accs) {
+            accIds.add(a.Id);
+            a.Status__c = 'Inactive';
+        }
 
-        for (Contact c : getContactsWithAccId(acc.Id)) {
+        update accs;
+
+        List<Contact> cons = getContacts(accIds);
+
+        for (Contact c : cons) {
             System.assertEquals('Inactive', c.Status__c);
         }
     }
 
     @IsTest
     static void updateAccountStatusWithNoContacts() {
-        Account acc = getAccount('Unit-Test-Account');
-        System.assert(String.isBlank(acc.Status__c));
+        Account acc = getAccount('Unit-Test-Account-No-Contacts');
 
-        acc.Status__c = 'Active';
+        acc.Status__c = 'Inactive';
         update acc;
 
         // Account status should still be updated
         // despite no related contacts.
-        System.assertEquals('Active', acc.Status__c);
+        System.assertEquals('Inactive', acc.Status__c);
     }
 
-    @IsTest
-    static void updateAccountStatusEnMasse() {
-        List<Account> accs = getAccounts();
-
-        for (Account a : accs) {
-            System.assert(String.isBlank(a.Status__c));
-            a.Status__c = 'Active';
-        }
-
-        update accs;
-
-        List<Contact> cons = getContacts();
-        for (Contact c : cons) {
-            System.assertEquals('Active', c.Status__c);
-        }
+    private static void createActiveAccountWithNoContacts() {
+        TestUtil.createAccount('Unit-Test-Account-No-Contacts', 'Active', null);
     }
 
-    private static void createAccountWithNoContacts() {
-        Account acc = TestUtil.createAccount('Unit-Test-Account', null);
-    }
-
-    private static void createTwentyAccountsWithTwoContacts() {
+    private static void createTwentyInactiveAccountsWithTwoContacts() {
         for (Integer i = 0; i <= 19; i++) {
             Account acc = TestUtil.createAccount(
-                'Unit-Test-Account-' + i,
+                'Unit-Test-Inactive-Account-' + i,
+                'Inactive',
                 null
             );
 
@@ -81,29 +86,40 @@ public class AccountTriggerHandlerTest {
                 String uniqueId = generateUniqueId();
                 TestUtil.createContact(
                     'Lastname-' + uniqueId,
-                    'unit-test-email-' +
-                    uniqueId +
-                    '@email.com',
                     new Map<String, Object>{ 'AccountId' => acc.Id }
                 );
             }
         }
     }
 
-    private static List<Account> getAccounts() {
-        return [SELECT Id, Status__c FROM Account];
+    private static void createTwentyActiveAccountsWithTwoContacts() {
+        for (Integer i = 0; i <= 19; i++) {
+            Account acc = TestUtil.createAccount(
+                'Unit-Test-Active-Account-' + i,
+                'Active',
+                null
+            );
+
+            for (Integer j = 0; j <= 1; j++) {
+                String uniqueId = generateUniqueId();
+                TestUtil.createContact(
+                    'Lastname-' + uniqueId,
+                    new Map<String, Object>{ 'AccountId' => acc.Id }
+                );
+            }
+        }
     }
 
-    private static List<Contact> getContacts() {
-        return [SELECT Id, Status__c FROM Contact];
+    private static Account getAccount(String name) {
+        return [SELECT Status__c FROM Account WHERE Name = :name];
     }
 
-    private static Account getAccount(String accName) {
-        return [SELECT Id, Status__c FROM Account WHERE Name = :accName];
+    private static List<Contact> getContacts(Set<Id> accIds) {
+        return [SELECT Status__c FROM Contact WHERE AccountId IN :accIds];
     }
 
-    private static List<Contact> getContactsWithAccId(Id accId) {
-        return [SELECT Id, Status__c FROM Contact WHERE AccountId = :accId];
+    private static List<Account> getAccounts(String status) {
+        return [SELECT Status__c FROM Account WHERE Status__c = :status];
     }
 
     public static String generateUniqueId() {

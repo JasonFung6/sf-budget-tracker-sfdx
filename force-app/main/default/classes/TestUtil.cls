@@ -8,14 +8,17 @@ public class TestUtil {
      * @method  createAccount
      * @desc    create a single account record
      * @param   String name
+     * @param   String status
      * @param   Map<String, Object> fields
      */
     public static Account createAccount(
         String name,
+        String status,
         Map<String, Object> fields
     ) {
         Account acc = new Account(
-            Name = String.isBlank(name) ? 'Unit-Test-Account' : name
+            Name = String.isBlank(name) ? 'Unit-Test-Account' : name,
+            Status__c = status
         );
 
         if (fields != null && !fields.isEmpty()) {
@@ -32,19 +35,16 @@ public class TestUtil {
      * @method  createdContact
      * @desc    create a single contact record
      * @param   String lastname
-     * @param   String email
      * @param   Map<String, Object> fields
      */
     public static Contact createContact(
         String lastName,
-        String email,
         Map<String, Object> fields
     ) {
         Contact con = new Contact(
-            LastName = lastName,
-            Email = String.isBlank(email) ? 'unit-test@email.com' : email,
-            Phone = '07111111111',
-            Title = 'Mr'
+            LastName = String.isBlank(lastName)
+                ? 'Unit-Test-LastName'
+                : lastName
         );
 
         if (fields != null && !fields.isEmpty()) {

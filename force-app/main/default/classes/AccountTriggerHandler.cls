@@ -19,12 +19,9 @@ public with sharing class AccountTriggerHandler {
                 continue;
             }
 
-            // Iterate through each related contact and update the status
-            if (!String.isBlank(acc.Status__c)) {
-                for (Contact con : acc.Contacts) {
-                    con.Status__c = acc.Status__c;
-                    consToUpdate.add(con);
-                }
+            for (Contact con : acc.Contacts) {
+                con.Status__c = acc.Status__c;
+                consToUpdate.add(con);
             }
         }
 
