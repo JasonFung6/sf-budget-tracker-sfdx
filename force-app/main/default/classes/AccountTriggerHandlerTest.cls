@@ -59,6 +59,20 @@ public class AccountTriggerHandlerTest {
     }
 
     @IsTest
+    static void updateAccountWithSameStatus() {
+        Account acc = getAccount('Unit-Test-Active-Account-1');
+
+        acc.Status__c = 'Active';
+        update acc;
+
+        List<Contact> cons = getContacts(new Set<Id>{ acc.Id });
+
+        for (Contact c : cons) {
+            System.assertEquals('Active', c.Status__c);
+        }
+    }
+
+    @IsTest
     static void updateAccountStatusWithNoContacts() {
         Account acc = getAccount('Unit-Test-Account-No-Contacts');
 
@@ -71,7 +85,12 @@ public class AccountTriggerHandlerTest {
     }
 
     private static void createActiveAccountWithNoContacts() {
-        TestUtil.createAccount('Unit-Test-Account-No-Contacts', 'Active', null);
+        TestUtil.createAccount(
+            'Unit-Test-Account-No-Contacts',
+            'Active',
+            true,
+            null
+        );
     }
 
     private static void createTwentyInactiveAccountsWithTwoContacts() {
@@ -79,6 +98,7 @@ public class AccountTriggerHandlerTest {
             Account acc = TestUtil.createAccount(
                 'Unit-Test-Inactive-Account-' + i,
                 'Inactive',
+                true,
                 null
             );
 
@@ -86,6 +106,7 @@ public class AccountTriggerHandlerTest {
                 String uniqueId = generateUniqueId();
                 TestUtil.createContact(
                     'Lastname-' + uniqueId,
+                    true,
                     new Map<String, Object>{ 'AccountId' => acc.Id }
                 );
             }
@@ -97,6 +118,7 @@ public class AccountTriggerHandlerTest {
             Account acc = TestUtil.createAccount(
                 'Unit-Test-Active-Account-' + i,
                 'Active',
+                true,
                 null
             );
 
@@ -104,6 +126,7 @@ public class AccountTriggerHandlerTest {
                 String uniqueId = generateUniqueId();
                 TestUtil.createContact(
                     'Lastname-' + uniqueId,
+                    true,
                     new Map<String, Object>{ 'AccountId' => acc.Id }
                 );
             }
