@@ -12,7 +12,7 @@ public with sharing class AccountTriggerHandler {
         List<Account> accWithCons = [
             SELECT Id, Status__c, (SELECT Id, Status__c FROM Contacts)
             FROM Account
-            WHERE Id IN :newAccountsMap.keyset()
+            WHERE Id IN :newAccountsMap.keySet()
         ];
 
         List<Contact> consToUpdate = new List<Contact>();
