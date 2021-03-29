@@ -9,11 +9,13 @@ public class TestUtil {
      * @desc    create a single account record
      * @param   String name
      * @param   String status
+     * @param   Boolean doInsert
      * @param   Map<String, Object> fields
      */
     public static Account createAccount(
         String name,
         String status,
+        Boolean doInsert,
         Map<String, Object> fields
     ) {
         Account acc = new Account(
@@ -27,7 +29,10 @@ public class TestUtil {
             }
         }
 
-        insert acc;
+        if (doInsert) {
+            insert acc;
+        }
+
         return acc;
     }
 
@@ -35,10 +40,12 @@ public class TestUtil {
      * @method  createdContact
      * @desc    create a single contact record
      * @param   String lastname
+     * @param   Boolean doInsert
      * @param   Map<String, Object> fields
      */
     public static Contact createContact(
         String lastName,
+        Boolean doInsert,
         Map<String, Object> fields
     ) {
         Contact con = new Contact(
@@ -53,7 +60,10 @@ public class TestUtil {
             }
         }
 
-        insert con;
+        if (doInsert) {
+            insert con;
+        }
+
         return con;
     }
 }
