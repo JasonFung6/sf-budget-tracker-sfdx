@@ -103,9 +103,8 @@ public class AccountTriggerHandlerTest {
             );
 
             for (Integer j = 0; j <= 1; j++) {
-                String uniqueId = generateUniqueId();
                 TestUtil.createContact(
-                    'Lastname-' + uniqueId,
+                    'Lastname-' + generateUniqueId(),
                     true,
                     new Map<String, Object>{ 'AccountId' => acc.Id }
                 );
@@ -123,9 +122,8 @@ public class AccountTriggerHandlerTest {
             );
 
             for (Integer j = 0; j <= 1; j++) {
-                String uniqueId = generateUniqueId();
                 TestUtil.createContact(
-                    'Lastname-' + uniqueId,
+                    'Lastname-' + generateUniqueId(),
                     true,
                     new Map<String, Object>{ 'AccountId' => acc.Id }
                 );
