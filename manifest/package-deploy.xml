@@ -6,8 +6,8 @@
       <members>ServiceUtilsTest</members>
   </types>
   <types>
-      <name>CustomObject</name>
-      <members>Account</members>
-  </types>  
+      <members>Bank.Account__c</members>
+      <name>CustomField</name>
+  </types>
   <version>50.0</version>
 </Package>
