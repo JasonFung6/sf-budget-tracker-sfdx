@@ -28,5 +28,5 @@ jobs:
                 checkonly: false
                 deploy_wait_time: '10'
                 manifest_path: manifest/package-deploy.xml
-                deploy_testlevel: RunSpecifiedTests
+                deploy_testlevel: NoTestRun
                 default_source_path: force-app/main/default
