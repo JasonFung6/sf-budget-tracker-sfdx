@@ -6,7 +6,7 @@
       <members>ServiceUtilsTest</members>
   </types>
   <types>
-      <members>Bank.Account__c</members>
+      <members>Account.Status__c</members>
       <name>CustomField</name>
   </types>
   <version>50.0</version>
