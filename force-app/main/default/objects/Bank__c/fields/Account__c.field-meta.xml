@@ -2,9 +2,9 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Account__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <description>The account this bank record is related to</description>
+    <description>The account this bank record is related to..</description>
     <externalId>false</externalId>
-    <inlineHelpText>The account this bank record is related to</inlineHelpText>
+    <inlineHelpText>The account this bank record is related to..</inlineHelpText>
     <label>Account</label>
     <referenceTo>Account</referenceTo>
     <relationshipLabel>Banks</relationshipLabel>
